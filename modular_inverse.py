@@ -1,3 +1,10 @@
+def modular_inverse(a, P):
+
+	if(findGCD(a, P)==1):
+		return exp_mod(a, P-2, P)
+	else:
+		return -1
+
 def exp_mod(a, b, m):
 	
 
@@ -30,5 +37,20 @@ def max_power_of_two_upto(num):
 	else:
 		return -1
 
+def findGCD(a, b):
+	if(a>b):
+		return EuclideanGCD(a, b)
+
+	else:
+		return EuclideanGCD(b, a)
+
+def EuclideanGCD(a, b):
+
+	if(b==0):
+		return a
+
+	else:
+		return EuclideanGCD(b, a%b)
+
 #TEST
-#print(exp_mod(8976, 879349, 32489))
+#print(modular_inverse(89342893493428, 1000000007))
